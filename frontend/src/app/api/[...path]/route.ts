@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function handler(req: NextRequest, { params }: { params: { path: string[] } }) {
-  const path = (params.path || []).join('/');
-  const backendUrl = `${process.env.NEXT_PUBLIC_API_URL}/${path}`;
+export async function handler(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
+  const { path } = await params;
+  const pathStr = (path || []).join('/');
+  const backendUrl = `${process.env.NEXT_PUBLIC_API_URL}/${pathStr}`;
   
   try {
     const response = await fetch(backendUrl, {
