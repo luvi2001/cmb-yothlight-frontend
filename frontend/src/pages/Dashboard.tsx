@@ -50,6 +50,9 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
     totalDonors: 0,
     totalDonations: '0',
     totalInventory: 0,
+    totalMembers: 0,
+    totalEvents: 0,
+    upcomingEvents: 0,
   });
 
   useEffect(() => {

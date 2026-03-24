@@ -89,12 +89,7 @@ export type InventoryCategory =
 
 export type BorrowStatus = 'AVAILABLE' | 'BORROWED' | 'RETURNED' | 'OVERDUE';
 
-export interface Stats {
-  totalUsers: number;
-  totalDonors: number;
-  totalDonations: string;
-  totalInventory: number;
-}
+
 
 export interface AlertState {
   type: 'success' | 'error' | 'info';
