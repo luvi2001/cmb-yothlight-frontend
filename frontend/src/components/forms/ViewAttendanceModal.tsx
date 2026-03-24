@@ -36,8 +36,14 @@ export const ViewAttendanceModal = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>('');
 
+  const isFlashArea = (area: string) => {
+    return area.toLowerCase() === 'flash';
+  };
+
   useEffect(() => {
-    if (!event?.id || !event?.area) return;
+    if (!event?.id || !event?.area) {
+      return;
+    }
 
     let cancelled = false;
 
@@ -47,7 +53,11 @@ export const ViewAttendanceModal = ({
       try {
         const [attendanceData, membersData] = await Promise.all([
           apiService.getEventAttendance(event.id),
-          event.area ? apiService.getMembersByArea(event.area) : Promise.resolve([]),
+          event.area 
+            ? (isFlashArea(event.area)
+                ? apiService.getTrainingGroupMembersByArea(event.area)
+                : apiService.getMembersByArea(event.area))
+            : Promise.resolve([]),
         ]);
 
         if (cancelled) return;
@@ -55,7 +65,7 @@ export const ViewAttendanceModal = ({
         const attendanceList: AttendanceRow[] = Array.isArray(attendanceData)
           ? attendanceData
           : [];
-        const membersList: MemberRow[] = Array.isArray(membersData) ? membersData : [];
+        let membersList: MemberRow[] = Array.isArray(membersData) ? membersData : [];
 
         const attendanceByMemberId = new Map<string, AttendanceRow>();
         for (const item of attendanceList) {
@@ -63,7 +73,7 @@ export const ViewAttendanceModal = ({
         }
 
         const mergedRows: DisplayRow[] = membersList
-          .map((member) => {
+          .map((member: any) => {
             const marked = attendanceByMemberId.get(member.id);
             return {
               id: marked?.id ?? member.id,
@@ -78,6 +88,7 @@ export const ViewAttendanceModal = ({
         setRows(mergedRows);
       } catch (e: any) {
         if (cancelled) return;
+        console.error('Error in ViewAttendanceModal:', e);
         setError(e?.message || 'Failed to load attendance');
         setRows([]);
       } finally {

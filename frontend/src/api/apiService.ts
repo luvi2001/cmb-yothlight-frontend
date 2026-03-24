@@ -197,6 +197,10 @@ class ApiService {
     return this.request(`/members/area/${area}`);
   }
 
+  async getTrainingGroupMembersByArea(area: string) {
+    return this.request(`/members/training-group/${area}`);
+  }
+
   async getMemberStats() {
     return this.request('/members/stats');
   }

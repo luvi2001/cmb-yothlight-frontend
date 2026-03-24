@@ -11,15 +11,22 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
+  const isFlashArea = (area: string) => {
+    return area.toLowerCase() === 'flash';
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoadingMembers(true);
         setError('');
         
-        // Fetch members for the area
-        const membersData = await apiService.getMembersByArea(event.area);
-        setMembers(membersData);
+        // Use training group endpoint for Flash area
+        const membersData = isFlashArea(event.area)
+          ? await apiService.getTrainingGroupMembersByArea(event.area)
+          : await apiService.getMembersByArea(event.area);
+        
+        setMembers(membersData || []);
         
         // Fetch existing attendance records for this event
         const existingAttendance = await apiService.getEventAttendance(event.id);
@@ -34,13 +41,16 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
         });
         setAttendance(attendanceMap);
       } catch (err: any) {
+        console.error('Error:', err);
         setError(err.message || 'Failed to load data');
       } finally {
         setLoadingMembers(false);
       }
     };
 
-    fetchData();
+    if (event?.area && event?.id) {
+      fetchData();
+    }
   }, [event.area, event.id]);
 
   const toggle = (id: string, present: boolean) => {

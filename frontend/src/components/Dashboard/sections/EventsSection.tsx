@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Calendar, Edit, Trash2, Users, CheckSquare } from 'lucide-react';
 import { Event } from '../../../types';
+import { apiService } from '../../../api/apiService';
 
 interface EventsSectionProps {
   events: Event[];
@@ -19,6 +20,31 @@ export const EventsSection: React.FC<EventsSectionProps> = ({
   onMarkAttendance,
   onViewAttendance,
 }) => {
+  const [presentCounts, setPresentCounts] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    const fetchPresentCounts = async () => {
+      const counts: Record<string, number> = {};
+      
+      for (const event of events) {
+        try {
+          const attendance = await apiService.getEventAttendance(event.id);
+          counts[event.id] = Array.isArray(attendance) 
+            ? attendance.filter((a: any) => a.attended).length 
+            : 0;
+        } catch (error) {
+          counts[event.id] = 0;
+        }
+      }
+      
+      setPresentCounts(counts);
+    };
+
+    if (events.length > 0) {
+      fetchPresentCounts();
+    }
+  }, [events]);
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -90,9 +116,11 @@ export const EventsSection: React.FC<EventsSectionProps> = ({
                   {event.location || 'N/A'}
                 </td>
                 <td className="px-3 sm:px-6 py-4 text-sm">
-                  <span className="px-2 py-1 text-xs font-medium rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
-                    {event._count?.attendance || 0} marked
-                  </span>
+                  <div className="flex flex-col gap-1">
+                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
+                      Present: {presentCounts[event.id] ?? '-'}
+                    </span>
+                  </div>
                 </td>
                 <td className="px-3 sm:px-6 py-4 text-sm">
                   <div className="flex flex-wrap gap-2">
