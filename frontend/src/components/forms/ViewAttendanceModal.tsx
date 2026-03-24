@@ -45,7 +45,7 @@ export const ViewAttendanceModal = ({
       try {
         const [attendanceData, membersData] = await Promise.all([
           apiService.getEventAttendance(event.id),
-          apiService.getMembersByArea(event.area),
+          event.area ? apiService.getMembersByArea(event.area) : Promise.resolve([]),
         ]);
 
         if (cancelled) return;
