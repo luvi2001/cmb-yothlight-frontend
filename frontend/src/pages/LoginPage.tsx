@@ -44,10 +44,10 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
     <div className="min-h-screen bg-gradient-to-br from-orange-400 via-red-400 to-red-700 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-10 w-full max-w-2xl transform transition-transform duration-300 hover:scale-105">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-extrabold text-gray-800 mb-2 tracking-wide">
+          <h1 className="text-4xl font-extrabold text-gray-800 dark:text-gray-900 mb-2 tracking-wide">
             CMB Youthlight
           </h1>
-          <p className="text-gray-600 text-lg">Login Portal</p>
+          <p className="text-gray-600 dark:text-gray-900 text-lg">Login Portal</p>
         </div>
 
         {alert && (
@@ -57,25 +57,25 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
         {/* Super admin login */}
         <form onSubmit={handleSubmit} className="space-y-6 mb-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-900 mb-2">
               Email (Super Admin)
             </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 shadow-sm transition"
+              className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 shadow-sm transition placeholder-gray-500 text-gray-900 dark:text-gray-900"
               placeholder="admin@cmbyouthlight.org"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-900 mb-2">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 shadow-sm transition"
+              className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 shadow-sm transition placeholder-gray-500 text-gray-900 dark:text-gray-900"
               placeholder="••••••••"
             />
           </div>
@@ -92,7 +92,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
         {/* Divider */}
         <div className="flex items-center my-4">
           <div className="flex-1 h-px bg-gray-200" />
-          <span className="px-3 text-xs font-semibold text-gray-400 uppercase">
+          <span className="px-3 text-xs font-semibold text-gray-400 dark:text-gray-900 uppercase">
             Or sign in with Google
           </span>
           <div className="flex-1 h-px bg-gray-200" />
@@ -110,11 +110,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
               alt="Google"
               className="w-5 h-5"
             />
-            <span className="text-sm font-semibold text-gray-700">Sign in with Google</span>
+            <span className="text-sm font-semibold text-gray-700 dark:text-gray-900">Sign in with Google</span>
           </button>
         </div>
 
-        <div className="mt-6 text-center text-gray-500 text-sm">
+        <div className="mt-6 text-center text-gray-500 dark:text-gray-900 text-sm">
           &copy; {new Date().getFullYear()} CMB Youthlight. All rights reserved.
         </div>
       </div>

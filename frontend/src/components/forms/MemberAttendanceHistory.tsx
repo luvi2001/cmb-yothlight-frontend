@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Download } from 'lucide-react';
 import { apiService } from '../../api/apiService';
+import { exportMemberHistoryToExcel, exportMemberHistoryToPDF } from '../../utils/exportUtils';
 
-export const MemberAttendanceHistory = ({ memberId }: any) => {
+export const MemberAttendanceHistory = ({ memberId, memberName = 'Member' }: any) => {
   const [history, setHistory] = useState<any[]>([]);
 
   useEffect(() => {
@@ -9,7 +11,32 @@ export const MemberAttendanceHistory = ({ memberId }: any) => {
   }, [memberId]);
 
   return (
-    <table className="w-full border-collapse">
+    <div>
+      {history.length > 0 && (
+        <div className="flex gap-2 mb-4 justify-end">
+          <button
+            onClick={() =>
+              exportMemberHistoryToExcel(memberName, history)
+            }
+            className="flex items-center gap-1 px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white transition"
+            title="Download history as Excel"
+          >
+            <Download size={16} />
+            Excel
+          </button>
+          <button
+            onClick={() =>
+              exportMemberHistoryToPDF(memberName, history)
+            }
+            className="flex items-center gap-1 px-3 py-1 rounded bg-red-600 hover:bg-red-700 text-white transition"
+            title="Download history as PDF"
+          >
+            <Download size={16} />
+            PDF
+          </button>
+        </div>
+      )}
+      <table className="w-full border-collapse">
       <thead>
         <tr className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
           <th className="text-left text-gray-700 dark:text-gray-300 font-medium py-2 px-2">Event</th>
@@ -39,5 +66,6 @@ export const MemberAttendanceHistory = ({ memberId }: any) => {
         ))}
       </tbody>
     </table>
+    </div>
   );
 };

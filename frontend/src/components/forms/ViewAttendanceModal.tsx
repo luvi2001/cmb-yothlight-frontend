@@ -1,6 +1,8 @@
 // src/components/forms/ViewAttendanceModal.tsx
 import React, { useEffect, useState } from 'react';
+import { Download } from 'lucide-react';
 import { apiService } from '../../api/apiService';
+import { exportToExcel, exportToPDF } from '../../utils/exportUtils';
 
 type AttendanceRow = {
   id: string;
@@ -97,11 +99,59 @@ export const ViewAttendanceModal = ({
     <div className="bg-white dark:bg-gray-900 rounded-lg w-full max-w-3xl p-4 border border-gray-200 dark:border-gray-700">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{event?.name}</h3>
-        {onClose && (
-          <button onClick={onClose} className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
-            Close
-          </button>
-        )}
+        <div className="flex gap-2">
+          {!loading && !error && rows.length > 0 && (
+            <>
+              <button
+                onClick={() =>
+                  exportToExcel({
+                    eventName: event?.name || 'Event',
+                    area: event?.area,
+                    records: rows.map((r) => ({
+                      memberName: r.memberName,
+                      attended: r.attended,
+                      notes: r.notes,
+                    })),
+                    total: rows.length,
+                    attended: rows.filter((a) => a.attended).length,
+                    absent: rows.filter((a) => !a.attended).length,
+                  })
+                }
+                className="flex items-center gap-1 px-3 py-1 rounded bg-green-600 hover:bg-green-700 text-white transition"
+                title="Download as Excel"
+              >
+                <Download size={16} />
+                Excel
+              </button>
+              <button
+                onClick={() =>
+                  exportToPDF({
+                    eventName: event?.name || 'Event',
+                    area: event?.area,
+                    records: rows.map((r) => ({
+                      memberName: r.memberName,
+                      attended: r.attended,
+                      notes: r.notes,
+                    })),
+                    total: rows.length,
+                    attended: rows.filter((a) => a.attended).length,
+                    absent: rows.filter((a) => !a.attended).length,
+                  })
+                }
+                className="flex items-center gap-1 px-3 py-1 rounded bg-red-600 hover:bg-red-700 text-white transition"
+                title="Download as PDF"
+              >
+                <Download size={16} />
+                PDF
+              </button>
+            </>
+          )}
+          {onClose && (
+            <button onClick={onClose} className="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">
+              Close
+            </button>
+          )}
+        </div>
       </div>
 
       {loading && <div className="text-gray-600 dark:text-gray-400">Loading...</div>}
