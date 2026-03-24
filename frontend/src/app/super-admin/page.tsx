@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { Dashboard } from '../../pages/Dashboard/DashboardPage'; // UPDATED PATH
+import { Dashboard } from '../../components/Dashboard/DashboardPage';
 
 export default function SuperAdminPage() {
   const router = useRouter();
