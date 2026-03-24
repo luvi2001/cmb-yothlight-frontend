@@ -119,3 +119,5 @@ export const NewMembersSection: React.FC<NewMembersSectionProps> = ({
     </div>
   );
 };
+
+export default NewMembersSection;

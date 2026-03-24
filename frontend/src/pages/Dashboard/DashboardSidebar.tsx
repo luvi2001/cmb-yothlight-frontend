@@ -40,3 +40,5 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ activeTab, o
     </nav>
   );
 };
+
+export default DashboardSidebar;

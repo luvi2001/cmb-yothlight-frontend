@@ -96,3 +96,4 @@ export const DonorsSection: React.FC<DonorsSectionProps> = ({
     </div>
   </div>
 );
+export default DonorsSection;

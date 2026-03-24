@@ -85,3 +85,5 @@ export const EventModals: React.FC<EventModalsProps> = ({
     </>
   );
 };
+
+export default EventModals;

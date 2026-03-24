@@ -134,3 +134,4 @@ export const InventorySection: React.FC<InventorySectionProps> = ({
     </div>
   </div>
 );
+export default InventorySection;

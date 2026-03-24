@@ -156,3 +156,5 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
     </div>
   );
 };
+
+export default DashboardOverview;

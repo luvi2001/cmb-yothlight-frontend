@@ -78,3 +78,4 @@ export const InventoryModals: React.FC<InventoryModalsProps> = ({
     </Modal>
   </>
 );
+export default InventoryModals;

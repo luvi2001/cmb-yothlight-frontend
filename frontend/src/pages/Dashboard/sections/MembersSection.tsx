@@ -130,3 +130,5 @@ export const MembersSection: React.FC<MembersSectionProps> = ({
     </div>
   );
 };
+
+export default MembersSection;

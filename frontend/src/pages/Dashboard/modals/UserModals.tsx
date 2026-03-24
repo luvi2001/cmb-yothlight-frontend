@@ -41,3 +41,4 @@ export const UserModals: React.FC<UserModalsProps> = ({
     </Modal>
   </>
 );
+export default UserModals;

@@ -57,3 +57,5 @@ export const DonorModals: React.FC<DonorModalsProps> = ({
     </Modal>
   </>
 );
+
+export default DonorModals;

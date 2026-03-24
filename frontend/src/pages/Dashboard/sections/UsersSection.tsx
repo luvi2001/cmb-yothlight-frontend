@@ -84,3 +84,4 @@ export const UsersSection: React.FC<UsersSectionProps> = ({
     </div>
   </div>
 );
+export default UsersSection;

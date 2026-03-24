@@ -132,3 +132,5 @@ export const EventsSection: React.FC<EventsSectionProps> = ({
     </div>
   );
 };
+
+export default EventsSection;

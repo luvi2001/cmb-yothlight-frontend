@@ -59,3 +59,5 @@ export const MemberModals: React.FC<MemberModalsProps> = ({
     </>
   );
 };
+
+export default MemberModals;

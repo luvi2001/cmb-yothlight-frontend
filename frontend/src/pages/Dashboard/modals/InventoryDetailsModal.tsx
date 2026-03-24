@@ -168,3 +168,4 @@ export const InventoryDetailsModal: React.FC<InventoryDetailsModalProps> = ({
     </Modal>
   );
 };
+export default InventoryDetailsModal;
