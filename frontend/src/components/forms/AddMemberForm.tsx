@@ -64,8 +64,8 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
       {error && <Alert type="error" message={error} onClose={() => setError('')} />}
 
       {/* Member Type Selection */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-        <label className="block text-sm font-medium text-gray-700 mb-3">Member Status *</label>
+      <div className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Member Status *</label>
         <div className="space-y-2">
           <label className="flex items-center">
             <input
@@ -76,7 +76,7 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
               onChange={() => setMemberType('existing')}
               className="w-4 h-4 accent-teal-600"
             />
-            <span className="ml-3 text-sm text-gray-700">Existing Member (Bible Study)</span>
+            <span className="ml-3 text-sm text-gray-700 dark:text-gray-300">Existing Member (Bible Study)</span>
           </label>
           <label className="flex items-center">
             <input
@@ -87,27 +87,27 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
               onChange={() => setMemberType('new')}
               className="w-4 h-4 accent-teal-600"
             />
-            <span className="ml-3 text-sm text-gray-700">New Member</span>
+            <span className="ml-3 text-sm text-gray-700 dark:text-gray-300">New Member</span>
           </label>
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name *</label>
         <input
           type="text"
           name="name"
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Age + Gender + Member Type */}
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Age *</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Age *</label>
           <input
             type="number"
             name="age"
@@ -115,17 +115,17 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
             min="1"
             value={formData.age}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gender</label>
           <select
             name="gender"
             value={formData.gender}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="MALE">Male</option>
             <option value="FEMALE">Female</option>
@@ -134,12 +134,12 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Member Type</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Member Type</label>
           <select
             name="type"
             value={formData.type}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="BIBLE_STUDY">Bible Study</option>
             <option value="TRAINING_GROUP">Training Group</option>
@@ -149,7 +149,7 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Area *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Area *</label>
         <input
           type="text"
           name="area"
@@ -157,64 +157,64 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
           value={formData.area}
           onChange={handleChange}
           placeholder="e.g., Colombo, Kandy, Galle"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone</label>
         <input
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
           placeholder="+94771234567"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Address</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Address</label>
         <input
           type="text"
           name="address"
           value={formData.address}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Joined Year</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Joined Year</label>
         <input
           type="text"
           name="yearJoined"
           value={formData.yearJoined}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notes</label>
         <textarea
           name="notes"
           value={formData.notes}
           onChange={handleChange}
           rows={3}
           placeholder="Any additional information..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         ></textarea>
       </div>
 
@@ -230,7 +230,7 @@ export const AddMemberForm: React.FC<AddMemberFormProps> = ({ onClose, onSuccess
         <button
           type="button"
           onClick={onClose}
-          className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300"
+          className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Cancel
         </button>

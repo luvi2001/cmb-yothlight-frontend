@@ -72,26 +72,26 @@ export const EditInventoryForm: React.FC<EditInventoryFormProps> = ({ item, onCl
       {error && <Alert type="error" message={error} onClose={() => setError('')} />}
       
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Item Name *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Item Name *</label>
         <input
           type="text"
           name="name"
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Category *</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category *</label>
           <select
             name="category"
             required
             value={formData.category}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
           >
             {CATEGORIES.map(cat => (
               <option key={cat} value={cat}>{cat.replace(/_/g, ' ')}</option>
@@ -100,7 +100,7 @@ export const EditInventoryForm: React.FC<EditInventoryFormProps> = ({ item, onCl
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Quantity *</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Quantity *</label>
           <input
             type="number"
             name="quantity"
@@ -108,88 +108,88 @@ export const EditInventoryForm: React.FC<EditInventoryFormProps> = ({ item, onCl
             min="0"
             value={formData.quantity}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
         <textarea
           name="description"
           value={formData.description}
           onChange={handleChange}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         ></textarea>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Location</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Location</label>
         <input
           type="text"
           name="location"
           value={formData.location}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Purchase Date</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Purchase Date</label>
           <input
             type="date"
             name="purchaseDate"
             value={formData.purchaseDate}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Purchase Price</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Purchase Price</label>
           <input
             type="number"
             name="purchasePrice"
             step="0.01"
             value={formData.purchasePrice}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Serial Number</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Serial Number</label>
         <input
           type="text"
           name="serialNumber"
           value={formData.serialNumber}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Condition</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Condition</label>
         <input
           type="text"
           name="condition"
           value={formData.condition}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notes</label>
         <textarea
           name="notes"
           value={formData.notes}
           onChange={handleChange}
           rows={2}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         ></textarea>
       </div>
 
@@ -202,12 +202,12 @@ export const EditInventoryForm: React.FC<EditInventoryFormProps> = ({ item, onCl
           onChange={handleChange}
           className="w-4 h-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
         />
-        <label htmlFor="isActive" className="ml-2 block text-sm text-gray-700">
+        <label htmlFor="isActive" className="ml-2 block text-sm text-gray-700 dark:text-gray-300">
           Active
         </label>
       </div>
 
-      <div className="flex space-x-3 pt-4 sticky bottom-0 bg-white">
+      <div className="flex space-x-3 pt-4 sticky bottom-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
         <button
           type="submit"
           disabled={loading}
@@ -218,7 +218,7 @@ export const EditInventoryForm: React.FC<EditInventoryFormProps> = ({ item, onCl
         <button
           type="button"
           onClick={onClose}
-          className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300"
+          className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Cancel
         </button>

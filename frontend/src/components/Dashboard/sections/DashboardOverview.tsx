@@ -40,16 +40,16 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
   return (
     <div className="space-y-6">
-      <h3 className="text-lg sm:text-xl font-semibold">Dashboard Overview</h3>
+      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100">Dashboard Overview</h3>
 
       {/* Top KPI cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {statsData.map((stat, index) => (
-          <div key={index} className="bg-white rounded-lg shadow p-4 sm:p-6">
+          <div key={index} className="bg-white dark:bg-gray-900 rounded-lg shadow dark:shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-xs sm:text-sm mb-1">{stat.label}</p>
-                <p className="text-2xl sm:text-3xl font-bold">{stat.value}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-1">{stat.label}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">{stat.value}</p>
               </div>
               <div className={`${stat.color} w-10 h-10 sm:w-12 sm:h-12 rounded-full opacity-20`} />
             </div>
@@ -60,26 +60,26 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
       {/* Quick actions + extra inventory stats */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Quick actions */}
-        <div className="bg-white rounded-lg shadow p-4 sm:p-6 lg:col-span-2">
-          <h4 className="text-base sm:text-lg font-semibold mb-4">Quick Actions</h4>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow dark:shadow-lg p-4 sm:p-6 lg:col-span-2 border border-gray-200 dark:border-gray-800">
+          <h4 className="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Quick Actions</h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             <button
               onClick={onAddUser}
-              className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-3 p-3 sm:p-4 border-2 border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors"
+              className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-3 p-3 sm:p-4 border-2 border-indigo-600 dark:border-indigo-500 text-indigo-600 dark:text-indigo-400 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors"
             >
               <UserPlus size={20} className="sm:w-6 sm:h-6" />
               <span className="font-medium text-sm sm:text-base text-center">Add New User</span>
             </button>
             <button
               onClick={onAddDonor}
-              className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-3 p-3 sm:p-4 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition-colors"
+              className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-3 p-3 sm:p-4 border-2 border-green-600 dark:border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors"
             >
               <Heart size={20} className="sm:w-6 sm:h-6" />
               <span className="font-medium text-sm sm:text-base text-center">Add New Donor</span>
             </button>
             <button
               onClick={onAddInventory}
-              className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-3 p-3 sm:p-4 border-2 border-orange-600 text-orange-600 rounded-lg hover:bg-orange-50 transition-colors"
+              className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-3 p-3 sm:p-4 border-2 border-orange-600 dark:border-orange-500 text-orange-600 dark:text-orange-400 rounded-lg hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
             >
               <Package size={20} className="sm:w-6 sm:h-6" />
               <span className="font-medium text-sm sm:text-base text-center">Add Inventory Item</span>
@@ -89,13 +89,13 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
         {/* Extra inventory summary (optional) */}
         {inventoryExtra.length > 0 && (
-          <div className="bg-white rounded-lg shadow p-4 sm:p-6">
-            <h4 className="text-base sm:text-lg font-semibold mb-4">Inventory Status</h4>
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow dark:shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800">
+            <h4 className="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Inventory Status</h4>
             <div className="space-y-2">
               {inventoryExtra.map((item) => (
                 <div key={item.label} className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">{item.label}</span>
-                  <span className="font-semibold text-gray-900">{item.value}</span>
+                  <span className="text-gray-600 dark:text-gray-400">{item.label}</span>
+                  <span className="font-semibold text-gray-900 dark:text-gray-100">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -106,21 +106,21 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
       {/* Recent activity row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent donations */}
-        <div className="bg-white rounded-lg shadow p-4 sm:p-6">
-          <h4 className="text-base sm:text-lg font-semibold mb-4">Recent Donations</h4>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow dark:shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800">
+          <h4 className="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Recent Donations</h4>
           {recentDonations.length === 0 ? (
-            <p className="text-sm text-gray-500">No recent donations.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">No recent donations.</p>
           ) : (
             <div className="space-y-3 max-h-64 overflow-y-auto text-sm">
               {recentDonations.map((donation, idx) => (
                 <div key={idx} className="flex items-center justify-between gap-2">
                   <div>
-                    <p className="font-medium text-gray-800 truncate">{donation.donorName}</p>
-                    <p className="text-gray-500 text-xs">
+                    <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{donation.donorName}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-xs">
                       {new Date(donation.date).toLocaleDateString()}
                     </p>
                   </div>
-                  <p className="font-semibold text-green-600 whitespace-nowrap">
+                  <p className="font-semibold text-green-600 dark:text-green-400 whitespace-nowrap">
                     Rs. {Number(donation.amount).toLocaleString()}
                   </p>
                 </div>
@@ -130,21 +130,21 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         </div>
 
         {/* Recent borrows */}
-        <div className="bg-white rounded-lg shadow p-4 sm:p-6">
-          <h4 className="text-base sm:text-lg font-semibold mb-4">Recent Borrowed Items</h4>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow dark:shadow-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-800">
+          <h4 className="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Recent Borrowed Items</h4>
           {recentBorrows.length === 0 ? (
-            <p className="text-sm text-gray-500">No recent borrow activity.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">No recent borrow activity.</p>
           ) : (
             <div className="space-y-3 max-h-64 overflow-y-auto text-sm">
               {recentBorrows.map((borrow, idx) => (
                 <div key={idx} className="flex items-center justify-between gap-2">
                   <div>
-                    <p className="font-medium text-gray-800 truncate">{borrow.itemName}</p>
-                    <p className="text-gray-500 text-xs">
+                    <p className="font-medium text-gray-800 dark:text-gray-200 truncate">{borrow.itemName}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-xs">
                       Borrower: {borrow.borrowerName || 'Unknown'}
                     </p>
                   </div>
-                  <p className="text-gray-500 text-xs whitespace-nowrap">
+                  <p className="text-gray-500 dark:text-gray-400 text-xs whitespace-nowrap">
                     {new Date(borrow.borrowDate).toLocaleDateString()}
                   </p>
                 </div>

@@ -54,14 +54,14 @@ export const AddDonationForm: React.FC<AddDonationFormProps> = ({
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && <Alert type="error" message={error} onClose={() => setError('')} />}
       
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
-        <p className="text-sm text-blue-800">
+      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-3 mb-4">
+        <p className="text-sm text-blue-800 dark:text-blue-300">
           <span className="font-semibold">Donor:</span> {donorName}
         </p>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Amount (Rs.) *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Amount (Rs.) *</label>
         <input
           type="number"
           name="amount"
@@ -70,31 +70,31 @@ export const AddDonationForm: React.FC<AddDonationFormProps> = ({
           step="0.01"
           value={formData.amount}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           placeholder="10000.00"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Date *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Date *</label>
         <input
           type="date"
           name="date"
           required
           value={formData.date}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Receipt Number</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Receipt Number</label>
         <input
           type="text"
           name="receiptNo"
           value={formData.receiptNo}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           placeholder="RCP-2025-001"
         />
       </div>

@@ -68,7 +68,7 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
 
       {/* Name */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Name *
         </label>
         <input
@@ -77,14 +77,14 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Age + Gender + Member Type */}
       <div className="grid grid-cols-3 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Age *
           </label>
           <input
@@ -94,19 +94,19 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
             min={1}
             value={formData.age}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Gender
           </label>
           <select
             name="gender"
             value={formData.gender}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="MALE">Male</option>
             <option value="FEMALE">Female</option>
@@ -115,14 +115,14 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Member Type
           </label>
           <select
             name="type"
             value={formData.type}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           >
             <option value="BIBLE_STUDY">Bible Study</option>
             <option value="TRAINING_GROUP">Training Group</option>
@@ -133,7 +133,7 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
 
       {/* Area */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Area *
         </label>
         <input
@@ -143,13 +143,13 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           value={formData.area}
           onChange={handleChange}
           placeholder="e.g., Colombo, Kandy, Galle"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Phone */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Phone
         </label>
         <input
@@ -158,13 +158,13 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           value={formData.phone}
           onChange={handleChange}
           placeholder="+94771234567"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Email */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Email
         </label>
         <input
@@ -172,13 +172,13 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Address */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Address
         </label>
         <input
@@ -186,12 +186,12 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           name="address"
           value={formData.address}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
             <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Joined Year
         </label>
         <input
@@ -199,13 +199,13 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           name="yearJoined"
           value={formData.yearJoined}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Notes */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Notes
         </label>
         <textarea
@@ -214,15 +214,15 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
           onChange={handleChange}
           rows={3}
           placeholder="Any additional information..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Active Toggle */}
-      <div className="bg-gray-50 border border-gray-200 rounded-xl p-3 flex items-center justify-between">
+      <div className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-gray-900">Member Status</p>
-          <p className="text-xs text-gray-500">
+          <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Member Status</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
             Disable member if they are no longer active.
           </p>
         </div>
@@ -235,7 +235,7 @@ export const EditMemberForm: React.FC<EditMemberFormProps> = ({
             onChange={handleChange}
             className="w-5 h-5 accent-teal-600"
           />
-          <span className="text-sm text-gray-700">Active</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Active</span>
         </label>
       </div>
 

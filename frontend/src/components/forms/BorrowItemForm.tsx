@@ -65,20 +65,20 @@ export const BorrowItemForm: React.FC<BorrowItemFormProps> = ({
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && <Alert type="error" message={error} onClose={() => setError('')} />}
       
-      <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 mb-4">
-        <p className="text-sm text-orange-800">
+      <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-700 rounded-lg p-3 mb-4">
+        <p className="text-sm text-orange-800 dark:text-orange-300">
           <span className="font-semibold">Item:</span> {itemName}
         </p>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Borrower *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Borrower *</label>
         <select
           name="borrowerId"
           required
           value={formData.borrowerId}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
           <option value="">Select a borrower</option>
           {users.map(user => (
@@ -90,7 +90,7 @@ export const BorrowItemForm: React.FC<BorrowItemFormProps> = ({
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Expected Return Date *</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Expected Return Date *</label>
         <input
           type="date"
           name="expectedReturnDate"
@@ -98,18 +98,18 @@ export const BorrowItemForm: React.FC<BorrowItemFormProps> = ({
           value={formData.expectedReturnDate}
           onChange={handleChange}
           min={new Date().toISOString().split('T')[0]}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Notes</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notes</label>
         <textarea
           name="notes"
           value={formData.notes}
           onChange={handleChange}
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
           placeholder="Any special instructions or conditions..."
         ></textarea>
       </div>
@@ -125,7 +125,7 @@ export const BorrowItemForm: React.FC<BorrowItemFormProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300"
+          className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Cancel
         </button>

@@ -20,7 +20,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({
   return (
     <div>
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-        <h3 className="text-xl font-semibold">Bible Study Members</h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Bible Study Members</h3>
         <button
           onClick={onAddMember}
           className="flex items-center space-x-2 px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors whitespace-nowrap w-full sm:w-auto justify-center sm:justify-start"
@@ -30,52 +30,52 @@ export const MembersSection: React.FC<MembersSectionProps> = ({
         </button>
       </div>
 
-      <div className="bg-white rounded-lg shadow overflow-x-auto">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow dark:shadow-lg overflow-x-auto border border-gray-200 dark:border-gray-800">
         <table className="w-full min-w-max sm:min-w-0">
-          <thead className="bg-gray-50">
+          <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             <tr>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Name
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Age
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Area
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Phone
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Email
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Events Attended
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Member Type
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Year Joined
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Status
               </th>
-              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+              <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
             {members.map((member) => (
-              <tr key={member.id} className="hover:bg-gray-50">
-                <td className="px-3 sm:px-6 py-4 text-sm font-medium">{member.name}</td>
-                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600">{member.age}</td>
-                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600">{member.area}</td>
-                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600">
+              <tr key={member.id} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+                <td className="px-3 sm:px-6 py-4 text-sm font-medium text-gray-900 dark:text-gray-100">{member.name}</td>
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{member.age}</td>
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{member.area}</td>
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
                   {member.phone || 'N/A'}
                 </td>
-                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600">
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
                   {member.email || 'N/A'}
                 </td>
                 <td className="px-3 sm:px-6 py-4 text-sm">
@@ -83,10 +83,10 @@ export const MembersSection: React.FC<MembersSectionProps> = ({
                     {member._count?.attendance || 0} events
                   </span>
                 </td>
-                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600">
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
                   {member.type || 'N/A'}
                 </td>
-                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600">
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
                   {member.yearJoined || 'N/A'}
                 </td>
                 <td className="px-3 sm:px-6 py-4 text-sm">

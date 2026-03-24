@@ -49,7 +49,7 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Name <span className="text-red-500">*</span>
         </label>
         <input
@@ -59,14 +59,14 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           placeholder="John Doe"
         />
       </div>
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Email
         </label>
         <input
@@ -75,14 +75,14 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
           type="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           placeholder="john@example.com"
         />
       </div>
 
       {/* Phone */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Phone <span className="text-red-500">*</span>
         </label>
         <input
@@ -92,14 +92,14 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
           required
           value={formData.phone}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           placeholder="+94 7xx xxx xxx"
         />
       </div>
 
       {/* Address */}
       <div>
-        <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="address" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Address
         </label>
         <input
@@ -108,14 +108,14 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
           type="text"
           value={formData.address}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           placeholder="Colombo, Sri Lanka"
         />
       </div>
 
       {/* Area */}
       <div>
-        <label htmlFor="area" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="area" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Area
         </label>
         <input
@@ -124,14 +124,14 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
           type="text"
           value={formData.area}
           onChange={handleChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           placeholder="Western Province"
         />
       </div>
 
       {/* Notes */}
       <div>
-        <label htmlFor="notes" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="notes" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Notes
         </label>
         <textarea
@@ -140,7 +140,7 @@ export const AddDonorForm: React.FC<AddDonorFormProps> = ({ onClose, onSuccess }
           value={formData.notes}
           onChange={handleChange}
           rows={3}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
           placeholder="Optional notes..."
         />
       </div>

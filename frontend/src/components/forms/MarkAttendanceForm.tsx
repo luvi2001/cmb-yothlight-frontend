@@ -89,10 +89,10 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
       {error && <Alert type="error" message={error} onClose={() => setError('')} />}
 
       {/* Header */}
-      <div className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
-        <h3 className="text-lg font-semibold text-gray-900">{event.name}</h3>
-        <p className="text-sm text-gray-500">
-          Area: <span className="font-medium text-gray-700">{event.area}</span>
+      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{event.name}</h3>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          Area: <span className="font-medium text-gray-700 dark:text-gray-300">{event.area}</span>
         </p>
       </div>
 
@@ -104,19 +104,19 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search member by name..."
-          className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Member list */}
       <div className="space-y-2 max-h-[380px] overflow-y-auto pr-1">
         {loadingMembers ? (
-          <div className="flex items-center justify-center py-10 text-gray-500">
+          <div className="flex items-center justify-center py-10 text-gray-500 dark:text-gray-400">
             <Loader2 className="animate-spin mr-2" size={18} />
             Loading members...
           </div>
         ) : filteredMembers.length === 0 ? (
-          <div className="text-center text-gray-500 py-10">
+          <div className="text-center text-gray-500 dark:text-gray-400 py-10">
             No members found.
           </div>
         ) : (
@@ -126,7 +126,7 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
             return (
               <div
                 key={m.id}
-                className="bg-white border border-gray-200 rounded-xl p-3 shadow-sm flex flex-col gap-2"
+                className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 shadow-sm flex flex-col gap-2"
               >
                 <div className="flex items-center justify-between gap-3">
                   <label className="flex items-center gap-3 cursor-pointer">
@@ -137,8 +137,8 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
                       className="w-5 h-5 accent-teal-600"
                     />
                     <div>
-                      <p className="font-medium text-gray-900">{m.name}</p>
-                      {m.phone && <p className="text-xs text-gray-500">{m.phone}</p>}
+                      <p className="font-medium text-gray-900 dark:text-gray-100">{m.name}</p>
+                      {m.phone && <p className="text-xs text-gray-500 dark:text-gray-400">{m.phone}</p>}
                     </div>
                   </label>
 
@@ -158,7 +158,7 @@ export const MarkAttendanceForm = ({ event, onSuccess }: any) => {
                   placeholder="Notes (optional)"
                   value={attendance[m.id]?.notes || ''}
                   onChange={(e) => handleNoteChange(m.id, e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
             );

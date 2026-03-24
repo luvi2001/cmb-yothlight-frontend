@@ -51,7 +51,7 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
 
       {/* Event Name */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Event Name *
         </label>
         <input
@@ -61,14 +61,14 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
           value={formData.name}
           onChange={handleChange}
           placeholder="e.g., Youth Bible Study"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Date & Area */}
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Date & Time *
           </label>
           <input
@@ -77,12 +77,12 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
             required
             value={formData.date}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Area *
           </label>
           <input
@@ -92,14 +92,14 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
             value={formData.area}
             onChange={handleChange}
             placeholder="e.g., Colombo"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
       </div>
 
       {/* Purpose */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Purpose *
         </label>
         <textarea
@@ -109,13 +109,13 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
           onChange={handleChange}
           rows={3}
           placeholder="Explain the purpose of this event..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Location */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Location
         </label>
         <input
@@ -124,13 +124,13 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
           value={formData.location}
           onChange={handleChange}
           placeholder="e.g., Church Hall"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Description */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Description
         </label>
         <textarea
@@ -139,7 +139,7 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
           onChange={handleChange}
           rows={3}
           placeholder="Any additional details..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 

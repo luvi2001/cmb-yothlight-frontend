@@ -44,23 +44,23 @@ export const ReturnItemForm: React.FC<ReturnItemFormProps> = ({
     <form onSubmit={handleSubmit} className="space-y-4">
       {error && <Alert type="error" message={error} onClose={() => setError('')} />}
       
-      <div className="bg-green-50 border border-green-200 rounded-lg p-3 mb-4">
-        <p className="text-sm text-green-800">
+      <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg p-3 mb-4">
+        <p className="text-sm text-green-800 dark:text-green-300">
           <span className="font-semibold">Item:</span> {itemName}
         </p>
-        <p className="text-sm text-green-800 mt-1">
+        <p className="text-sm text-green-800 dark:text-green-300 mt-1">
           <span className="font-semibold">Borrowed by:</span> {borrowerName}
         </p>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">Return Notes</label>
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Return Notes</label>
         <textarea
           name="notes"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           rows={4}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           placeholder="Item condition, any damages, or other notes..."
         ></textarea>
       </div>
@@ -76,7 +76,7 @@ export const ReturnItemForm: React.FC<ReturnItemFormProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300"
+          className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Cancel
         </button>

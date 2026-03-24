@@ -74,7 +74,7 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
 
       {/* Event Name */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Event Name *
         </label>
         <input
@@ -84,14 +84,14 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
           value={formData.name}
           onChange={handleChange}
           placeholder="Event Name"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Date & Area */}
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Date & Time *
           </label>
           <input
@@ -100,12 +100,12 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
             required
             value={formData.date}
             onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Area *
           </label>
           <input
@@ -115,14 +115,14 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
             value={formData.area}
             onChange={handleChange}
             placeholder="e.g., Colombo"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
           />
         </div>
       </div>
 
       {/* Purpose */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Purpose *
         </label>
         <textarea
@@ -132,13 +132,13 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
           onChange={handleChange}
           rows={3}
           placeholder="Explain the purpose..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Location */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Location
         </label>
         <input
@@ -147,13 +147,13 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
           value={formData.location}
           onChange={handleChange}
           placeholder="e.g., Church Hall"
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Description */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
           Description
         </label>
         <textarea
@@ -162,16 +162,16 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
           onChange={handleChange}
           rows={3}
           placeholder="Additional details..."
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
       </div>
 
       {/* Active Toggle */}
-      <div className="bg-gray-50 border border-gray-200 rounded-xl p-3 flex items-center justify-between">
+      <div className="bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-gray-900">Event Status</p>
-          <p className="text-xs text-gray-500">
-            Disable event if it’s cancelled or completed.
+          <p className="text-sm font-medium text-gray-900 dark:text-gray-100">Event Status</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            Disable event if it's cancelled or completed.
           </p>
         </div>
 
@@ -183,7 +183,7 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
             onChange={handleChange}
             className="w-5 h-5 accent-teal-600"
           />
-          <span className="text-sm text-gray-700">Active</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Active</span>
         </label>
       </div>
 
@@ -200,7 +200,7 @@ export const EditEventForm: React.FC<EditEventFormProps> = ({
         <button
           type="button"
           onClick={onClose}
-          className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300"
+          className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Cancel
         </button>

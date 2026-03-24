@@ -24,7 +24,7 @@ export const InventorySection: React.FC<InventorySectionProps> = ({
 }) => (
   <div>
     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-      <h3 className="text-xl font-semibold">Manage Inventory</h3>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Manage Inventory</h3>
       <button
         onClick={onAddInventory}
         className="flex items-center space-x-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors whitespace-nowrap w-full sm:w-auto justify-center sm:justify-start"
