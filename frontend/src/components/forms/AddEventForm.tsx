@@ -40,7 +40,7 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -85,15 +85,23 @@ export const AddEventForm: React.FC<AddEventFormProps> = ({ onClose, onSuccess }
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Area *
           </label>
-          <input
-            type="text"
+          <select
             name="area"
             required
             value={formData.area}
             onChange={handleChange}
-            placeholder="e.g., Colombo"
             className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-          />
+          >
+            <option value="">Select Area</option>
+            <option value="Dematagoda">Dematagoda</option>
+            <option value="Wellawatte">Wellawatte</option>
+            <option value="Kirulapone">Kirulapone</option>
+            <option value="Common">Common</option>
+            <option value="Flash">Flash</option>
+            <option value="Wattala">Wattala</option>
+            <option value="Kirulapone and Wellawatte">Kirulapone and Wellawatte</option>
+            <option value="Wattala and Dematagoda">Wattala and Dematagoda</option>
+          </select>
         </div>
       </div>
 
