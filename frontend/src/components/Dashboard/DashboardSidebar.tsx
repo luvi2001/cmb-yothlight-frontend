@@ -27,13 +27,14 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ activeTab, o
           <button
             key={item.id}
             onClick={() => onChangeTab(item.id)}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${activeTab === item.id
+            className={`w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-colors text-sm sm:text-base ${activeTab === item.id
                 ? 'bg-indigo-700 text-white'
                 : 'text-indigo-200 hover:bg-indigo-800'
               }`}
+            title={item.label}
           >
-            <Icon size={20} />
-            <span>{item.label}</span>
+            <Icon size={18} className="sm:w-5 sm:h-5 flex-shrink-0" />
+            <span className="truncate">{item.label}</span>
           </button>
         );
       })}
