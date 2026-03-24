@@ -633,3 +633,5 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
     </div>
   );
 };
+
+export default Dashboard;
